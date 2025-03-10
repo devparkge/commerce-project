@@ -1,4 +1,4 @@
-package github.hyungi.controller.model.request;
+package github.hyungi.web.model.request;
 
 public record SignUpRequest(
         String email,
