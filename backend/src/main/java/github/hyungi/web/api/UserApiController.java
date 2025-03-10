@@ -1,11 +1,11 @@
-package github.hyungi.controller.api;
+package github.hyungi.web.api;
 
-import github.hyungi.controller.model.request.SignUpRequest;
-import github.hyungi.controller.model.response.wrapper.UserResponseWrapper;
 import github.hyungi.domain.model.User;
 import github.hyungi.domain.service.SignUpUserService;
+import github.hyungi.web.model.request.SignUpRequest;
+import github.hyungi.web.model.response.wrapper.UserResponseWrapper;
 import lombok.RequiredArgsConstructor;
-import org.apache.ibatis.annotations.Update;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserApiController {
     private final SignUpUserService signUpUserService;
 
-    @Update("/signup")
+    @PutMapping("/signup")
     public UserResponseWrapper signUp(
             @RequestBody SignUpRequest signUpRequest
     ) {
