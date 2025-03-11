@@ -1,7 +1,7 @@
-package github.hyungi.domain.service;
+package github.hyungi.domain.user.service;
 
-import github.hyungi.domain.model.User;
-import github.hyungi.domain.repository.UsersRepository;
+import github.hyungi.domain.user.model.User;
+import github.hyungi.domain.user.repository.UsersRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

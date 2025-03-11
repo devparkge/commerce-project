@@ -1,7 +1,7 @@
-package github.hyungi.domain.service;
+package github.hyungi.domain.user.service;
 
-import github.hyungi.domain.model.User;
-import github.hyungi.domain.repository.UsersRepository;
+import github.hyungi.domain.user.model.User;
+import github.hyungi.domain.user.repository.UsersRepository;
 import github.hyungi.exception.InvalidPasswordException;
 import github.hyungi.exception.NotFoundEmailException;
 import lombok.RequiredArgsConstructor;

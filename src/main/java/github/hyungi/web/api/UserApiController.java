@@ -1,8 +1,8 @@
 package github.hyungi.web.api;
 
-import github.hyungi.domain.model.User;
-import github.hyungi.domain.service.LoginService;
-import github.hyungi.domain.service.SignUpUserService;
+import github.hyungi.domain.user.model.User;
+import github.hyungi.domain.user.service.LoginService;
+import github.hyungi.domain.user.service.SignUpUserService;
 import github.hyungi.web.model.UserResponseAssembler;
 import github.hyungi.web.model.request.LoginRequest;
 import github.hyungi.web.model.request.SignUpRequest;

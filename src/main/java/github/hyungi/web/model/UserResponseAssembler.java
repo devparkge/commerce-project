@@ -1,6 +1,6 @@
 package github.hyungi.web.model;
 
-import github.hyungi.domain.model.User;
+import github.hyungi.domain.user.model.User;
 import github.hyungi.util.JwtUtil;
 import github.hyungi.web.model.response.UserResponse;
 import github.hyungi.web.model.response.wrapper.UserResponseWrapper;

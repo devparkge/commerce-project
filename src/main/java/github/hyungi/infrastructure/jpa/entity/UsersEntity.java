@@ -1,6 +1,6 @@
 package github.hyungi.infrastructure.jpa.entity;
 
-import github.hyungi.domain.model.User;
+import github.hyungi.domain.user.model.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

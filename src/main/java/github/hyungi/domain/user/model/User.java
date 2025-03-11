@@ -1,4 +1,4 @@
-package github.hyungi.domain.model;
+package github.hyungi.domain.user.model;
 
 import lombok.Builder;
 

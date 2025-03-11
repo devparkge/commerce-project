@@ -1,6 +1,6 @@
 package github.hyungi.web.model.response;
 
-import github.hyungi.domain.model.User;
+import github.hyungi.domain.user.model.User;
 
 import java.util.UUID;
 

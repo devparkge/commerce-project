@@ -1,7 +1,7 @@
 package github.hyungi.infrastructure.jpa.repository;
 
-import github.hyungi.domain.model.User;
-import github.hyungi.domain.repository.UsersReadRepository;
+import github.hyungi.domain.user.model.User;
+import github.hyungi.domain.user.repository.UsersReadRepository;
 import github.hyungi.infrastructure.jpa.dao.UsersDao;
 import github.hyungi.infrastructure.jpa.entity.UsersEntity;
 import lombok.RequiredArgsConstructor;
