@@ -1,12 +1,12 @@
-package github.hyungi.web.api;
+package github.hyungi.web.users.api;
 
 import github.hyungi.domain.user.model.User;
 import github.hyungi.domain.user.service.LoginService;
 import github.hyungi.domain.user.service.SignUpUserService;
-import github.hyungi.web.model.UserResponseAssembler;
-import github.hyungi.web.model.request.LoginRequest;
-import github.hyungi.web.model.request.SignUpRequest;
-import github.hyungi.web.model.response.wrapper.UserResponseWrapper;
+import github.hyungi.web.users.model.UserResponseAssembler;
+import github.hyungi.web.users.model.request.LoginRequest;
+import github.hyungi.web.users.model.request.SignUpRequest;
+import github.hyungi.web.users.model.response.wrapper.UserResponseWrapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

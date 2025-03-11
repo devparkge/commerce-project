@@ -1,4 +1,4 @@
-package github.hyungi.web.api;
+package github.hyungi.web.users.api;
 
 import github.hyungi.exception.InvalidPasswordException;
 import github.hyungi.exception.NotFoundEmailException;

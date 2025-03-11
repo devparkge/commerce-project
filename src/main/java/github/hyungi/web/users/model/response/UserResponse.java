@@ -1,4 +1,4 @@
-package github.hyungi.web.model.response;
+package github.hyungi.web.users.model.response;
 
 import github.hyungi.domain.user.model.User;
 

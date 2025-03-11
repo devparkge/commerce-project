@@ -1,9 +1,9 @@
-package github.hyungi.web.model;
+package github.hyungi.web.users.model;
 
 import github.hyungi.domain.user.model.User;
 import github.hyungi.util.JwtUtil;
-import github.hyungi.web.model.response.UserResponse;
-import github.hyungi.web.model.response.wrapper.UserResponseWrapper;
+import github.hyungi.web.users.model.response.UserResponse;
+import github.hyungi.web.users.model.response.wrapper.UserResponseWrapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

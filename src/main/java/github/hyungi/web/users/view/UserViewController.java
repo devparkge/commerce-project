@@ -1,4 +1,4 @@
-package github.hyungi.web.view;
+package github.hyungi.web.users.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

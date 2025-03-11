@@ -1,6 +1,6 @@
-package github.hyungi.web.model.response.wrapper;
+package github.hyungi.web.users.model.response.wrapper;
 
-import github.hyungi.web.model.response.UserResponse;
+import github.hyungi.web.users.model.response.UserResponse;
 
 public record UserResponseWrapper(
         UserResponse user
