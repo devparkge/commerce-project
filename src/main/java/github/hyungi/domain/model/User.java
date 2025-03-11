@@ -33,4 +33,8 @@ public record User(
                 .address(address)
                 .build();
     }
+
+    public boolean matchesPassword(String password) {
+        return password().equals(password);
+    }
 }
