@@ -1,20 +1,33 @@
 package github.hyungi.web.api;
 
 import github.hyungi.domain.model.User;
+import github.hyungi.domain.service.LoginService;
 import github.hyungi.domain.service.SignUpUserService;
+import github.hyungi.web.model.UserResponseAssembler;
+import github.hyungi.web.model.request.LoginRequest;
 import github.hyungi.web.model.request.SignUpRequest;
 import github.hyungi.web.model.response.wrapper.UserResponseWrapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserApiController {
     private final SignUpUserService signUpUserService;
+    private final UserResponseAssembler userResponseAssembler;
+    private final LoginService loginService;
+
+    @PostMapping("/login")
+    public UserResponseWrapper login(
+            @RequestBody LoginRequest loginRequest
+    ) {
+        User user = loginService.login(loginRequest.email(), loginRequest.password());
+        UUID userId = user.userId();
+        return userResponseAssembler.assembleUserResponse(user, userId);
+    }
 
     @PutMapping("/signup")
     public UserResponseWrapper signUp(
@@ -27,6 +40,6 @@ public class UserApiController {
                 signUpRequest.phoneNumber(),
                 signUpRequest.address()
         );
-        return UserResponseWrapper.from(user);
+        return userResponseAssembler.assembleUserResponse(user, null);
     }
 }
