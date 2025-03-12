@@ -1,0 +1,119 @@
+/* 전체 페이지 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* 페이지 컨테이너 */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+/* 폼 컨테이너 */
+.product-form-container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+.form-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 폼 그룹 (각 입력 필드) */
+.input-group {
+    margin-bottom: 15px;
+}
+
+/* 라벨 스타일 */
+.input-group label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* 입력 필드 스타일 */
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* 텍스트영역 크기 조정 */
+.textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* 버튼 스타일 */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .product-form-container {
+        padding: 15px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .btn-submit {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-form-container {
+        padding: 10px;
+    }
+
+    .form-title {
+        font-size: 18px;
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+        padding: 6px;
+        font-size: 10px;
+    }
+
+    .btn-submit {
+        padding: 8px;
+    }
+}
