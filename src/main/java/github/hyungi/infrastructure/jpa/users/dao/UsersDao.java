@@ -1,6 +1,6 @@
-package github.hyungi.infrastructure.jpa.dao;
+package github.hyungi.infrastructure.jpa.users.dao;
 
-import github.hyungi.infrastructure.jpa.entity.UsersEntity;
+import github.hyungi.infrastructure.jpa.users.entity.UsersEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

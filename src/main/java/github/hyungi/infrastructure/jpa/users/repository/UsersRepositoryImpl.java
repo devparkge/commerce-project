@@ -1,9 +1,9 @@
-package github.hyungi.infrastructure.jpa.repository;
+package github.hyungi.infrastructure.jpa.users.repository;
 
 import github.hyungi.domain.user.model.User;
 import github.hyungi.domain.user.repository.UsersRepository;
-import github.hyungi.infrastructure.jpa.dao.UsersDao;
-import github.hyungi.infrastructure.jpa.entity.UsersEntity;
+import github.hyungi.infrastructure.jpa.users.dao.UsersDao;
+import github.hyungi.infrastructure.jpa.users.entity.UsersEntity;
 import org.springframework.stereotype.Repository;
 
 @Repository
