@@ -1,6 +1,11 @@
 spring:
   application:
     name: commerce-project-backend
+  mvc:
+    static-path-pattern: /image/**
+  web:
+    resources:
+      static-locations: file:../image/
   datasource:
     url: jdbc:h2:~/commerce-project
     driverClassName: org.h2.Driver
@@ -14,6 +19,8 @@ spring:
   h2:
     console:
       enabled: true
+image:
+  upload-dir: image/
 jwt:
   secret: "this_is_32_bytes_long_secret_key_string_123"
   expiration: 3600000
