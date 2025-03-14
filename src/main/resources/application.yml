@@ -5,7 +5,7 @@ spring:
     static-path-pattern: /image/**
   web:
     resources:
-      static-locations: file:../image/
+      static-locations: classpath:/static/, classpath:/public/, classpath:/resources/, classpath:/META-INF/resources/, file:image/
   datasource:
     url: jdbc:h2:~/commerce-project
     driverClassName: org.h2.Driver
@@ -20,7 +20,7 @@ spring:
     console:
       enabled: true
 image:
-  upload-dir: image/
+  upload-dir: ../image/
 jwt:
   secret: "this_is_32_bytes_long_secret_key_string_123"
   expiration: 3600000
