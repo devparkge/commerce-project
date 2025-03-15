@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     productForm.addEventListener('submit', function(event) {
         event.preventDefault(); // 기본 폼 제출 방지
+        const fileInput = document.getElementById('image'); // 파일 입력 필드 가져오기
+        const formData = new FormData();
 
         const productData = {
             name: document.getElementById('name').value.trim(),
@@ -10,9 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
             price: parseFloat(document.getElementById('price').value),
             stock: parseInt(document.getElementById('stock').value, 10),
             category: document.getElementById('category').value,
-            imageUrl: document.getElementById('imageUrl').value.trim(),
-            userId: 1 // 예시로 1번 사용자 (실제 로그인 유저 정보 받아야 함)
         };
+
+        formData.append("image", fileInput.files[0]); // 파일 추가
+        formData.append("product", new Blob([JSON.stringify(productData)], { type: "application/json" }));
 
         // 필수값 확인 (nullable 방지)
         if (!productData.name || !productData.description || isNaN(productData.price) || isNaN(productData.stock)) {
@@ -20,16 +23,19 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        fetch('/api/products', {
-            method: 'POST',
+        const token = localStorage.getItem('jwt');
+
+        fetch('/products/product-add', {
+            method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Authorization': token ? `Token ${token}` : ''
             },
-            body: JSON.stringify(productData)
+            body: formData
         })
             .then(response => response.json())
             .then(data => {
-            if (data.id) {
+            console.log(data);
+            if (data.product) {
                 alert('✅ 상품 등록 성공!');
                 window.location.href = '/products'; // 상품 목록 페이지로 이동
             } else {
