@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // JWT 토큰을 로컬 스토리지에 저장
                 localStorage.setItem('jwt', data.user.token);
                 alert('로그인 성공');
-                window.location.href = '/users/login'; // 로그인 성공 후 대시보드로 이동
+                window.location.href = '/products'; // 로그인 성공 후 대시보드로 이동
             })
         });
     }
