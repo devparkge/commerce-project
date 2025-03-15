@@ -6,14 +6,18 @@ import github.hyungi.infrastructure.jpa.product.dao.ProductDao;
 import github.hyungi.infrastructure.jpa.product.entity.ProductEntity;
 import github.hyungi.infrastructure.jpa.users.dao.UsersDao;
 import github.hyungi.infrastructure.jpa.users.entity.UsersEntity;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@RequiredArgsConstructor
-public class ProductRepositoryImpl implements ProductRepository {
+public class ProductRepositoryImpl extends ProductReadRepositoryImpl implements ProductRepository {
     private final ProductDao productDao;
     private final UsersDao usersDao;
+
+    public ProductRepositoryImpl(ProductDao productDao, ProductDao productDao1, UsersDao usersDao) {
+        super(productDao);
+        this.productDao = productDao1;
+        this.usersDao = usersDao;
+    }
 
     @Override
     public Product save(Product product) {
