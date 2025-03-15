@@ -59,14 +59,17 @@ public class ProductEntity {
     }
 
     public Product toDomain() {
-        return Product.create(
+        return new Product(
+                productId,
                 sellerEntity.toDomain(),
                 name,
                 description,
                 price,
                 stock,
                 category,
-                imageUrl
+                imageUrl,
+                createdAt,
+                updatedAt
         );
     }
 
