@@ -31,7 +31,7 @@ public class ProductViewController {
     }
 
     @GetMapping("/{productId}")
-    public String productDet(
+    public String productDetail(
             @PathVariable("productId") UUID productId,
             Model model
     ) {
