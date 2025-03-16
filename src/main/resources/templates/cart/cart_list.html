@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>장바구니</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="p-6 max-w-4xl mx-auto bg-gray-100">
+
+<h1 class="text-3xl font-bold text-center mb-6 text-gray-800">🛒 장바구니</h1>
+
+<!-- 장바구니 목록 -->
+<div class="bg-white p-6 rounded-lg shadow-lg">
+  <table class="w-full border-collapse">
+    <thead>
+    <tr class="bg-gray-200 text-gray-700">
+      <th class="py-3">상품</th>
+      <th class="py-3">가격</th>
+      <th class="py-3">수량</th>
+      <th class="py-3">합계</th>
+      <th class="py-3">삭제</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cartItem : ${cart.itemList}" class="border-t text-center">
+      <!-- 상품 이미지 -->
+      <td class="py-4">
+        <div class="flex items-center gap-4">
+          <img th:src="@{'http://localhost:8080/image/' + ${cartItem.product.imageUrl}}"
+               th:alt="${cartItem.product.name}" class="w-16 h-16 object-cover rounded-md">
+          <span th:text="${cartItem.product.name}" class="font-semibold text-gray-800"></span>
+        </div>
+      </td>
+
+      <!-- 상품 가격 -->
+      <td class="py-4 text-blue-600 font-bold" th:text="${cartItem.product.price + '원'}"></td>
+
+      <!-- 수량 변경 -->
+      <td class="py-4">
+        <div class="flex items-center justify-center">
+          <button class="bg-gray-300 text-gray-700 px-3 py-1 rounded-l-md hover:bg-gray-400"
+                  onclick="updateQuantity(this, -1)" th:attr="data-id=${cartItem.product.productId}">
+            -
+          </button>
+          <button class="bg-gray-300 text-gray-700 px-3 py-1 rounded-r-md hover:bg-gray-400"
+                  onclick="updateQuantity(this, 1)" th:attr="data-id=${cartItem.product.productId}">
+            +
+          </button>
+        </div>
+      </td>
+
+      <!-- 합계 가격 -->
+      <td class="py-4 font-bold text-gray-800" th:text="${cartItem.totalPrice + '원'}"></td>
+
+      <!-- 삭제 버튼 -->
+      <td class="py-4">
+        <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600"
+                onclick="removeFromCart(this)" th:attr="data-id=${cartItem.product.productId}">
+          ❌
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- 총 가격 & 결제 버튼 -->
+  <div class="mt-6 flex justify-between items-center">
+<!--    <p class="text-xl font-bold text-gray-800">총 가격: <span id="totalPrice" th:text="${totalPrice + '원'}"></span></p>-->
+<!--    <button class="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600">결제하기</button>-->
+  </div>
+</div>
+
+<script src="/js/cart/cart_list.js"></script>
+
+</body>
+</html>
